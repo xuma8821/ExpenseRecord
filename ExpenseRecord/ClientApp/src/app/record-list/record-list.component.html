@@ -4,21 +4,21 @@
 <div class="component-container">   
     <div class="create-form">
         <label for="description">Description</label>
-        <input type="text" id="description" (input)="newRecord.description">
+        <input type="text" id="description" [(ngModel)]="newRecord.description">
         <label for="type">Type</label>
-        <input type="text" id="type" (input)="newRecord.type">
+        <input type="text" id="type" [(ngModel)]="newRecord.type">
         <label for="amount">Amount</label>
-        <input type="text" id="amount" (input)="newRecord.amount">
+        <input type="text" id="amount" [(ngModel)]="newRecord.amount">
         <label for="date">Date</label>
-        <input type="text" id="date" (input)="newRecord.date">
-        <button class="add-button" (click)="addRecord()">Add</button>
+        <input type="text" id="date" [(ngModel)]="newRecord.date">
+        <button class="add-button" (click)="addRecord(newRecord)">Add</button>
     </div>
     <div class="expense-records">
         <div class="records-title">Records:</div>
         <ul *ngFor="let record of records">
-            <li>
-                <span>record.description, record</span>
-                <button class="delete-button" (click)="deleteRecord()">Delete</button>
+            <li class="expense-record">
+                <span>{{record.description}}, {{record.type}}, {{record.amount}}, {{record.date}}</span>
+                <button class="delete-button" (click)="deleteRecord(record)">Delete</button>
             </li>
         </ul>
     </div>

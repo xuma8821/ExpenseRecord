@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Record } from '../model';
+import { DealRecordsService } from '../deal-records.service';
 
 @Component({
   selector: 'app-record-list',
@@ -14,13 +15,20 @@ export class RecordListComponent implements OnInit {
     amount:"",
     date:""
   };
-  constructor() { }
+  constructor(private dealRecordsService:DealRecordsService) { }
   ngOnInit(): void {
+    this.getAllRecords();
   }
-  addRecord(){
+  getAllRecords(){
+    this.records = this.dealRecordsService.fetchRecords();
+  }
+  addRecord(newRecord:Record){
 
+    this.dealRecordsService.addRecord(newRecord);
   }
-  deleteRecord(){
+  deleteRecord(deletingRecord:any){
+    this.dealRecordsService.deleteRecord(deletingRecord);
+  
 
   }
 }
