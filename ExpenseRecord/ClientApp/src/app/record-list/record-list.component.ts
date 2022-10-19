@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Record } from '../model';
 import { DealRecordsService } from '../deal-records.service';
 
+
 @Component({
   selector: 'app-record-list',
   templateUrl: './record-list.component.html',
@@ -23,8 +24,12 @@ export class RecordListComponent implements OnInit {
     this.records = this.dealRecordsService.fetchRecords();
   }
   addRecord(newRecord:Record){
-
     this.dealRecordsService.addRecord(newRecord);
+    newRecord.description ="";
+    newRecord.type="";
+    newRecord.amount="";
+    newRecord.date=""
+
   }
   deleteRecord(deletingRecord:any){
     this.dealRecordsService.deleteRecord(deletingRecord);
