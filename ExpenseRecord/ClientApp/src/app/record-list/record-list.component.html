@@ -1,0 +1,25 @@
+<div class="title">
+    <h1>Expense Record System</h1>
+</div>
+<div class="component-container">   
+    <div class="create-form">
+        <label for="description">Description</label>
+        <input type="text" id="description" (input)="newRecord.description">
+        <label for="type">Type</label>
+        <input type="text" id="type" (input)="newRecord.type">
+        <label for="amount">Amount</label>
+        <input type="text" id="amount" (input)="newRecord.amount">
+        <label for="date">Date</label>
+        <input type="text" id="date" (input)="newRecord.date">
+        <button class="add-button" (click)="addRecord()">Add</button>
+    </div>
+    <div class="expense-records">
+        <div class="records-title">Records:</div>
+        <ul *ngFor="let record of records">
+            <li>
+                <span>record.description, record</span>
+                <button class="delete-button" (click)="deleteRecord()">Delete</button>
+            </li>
+        </ul>
+    </div>
+</div>

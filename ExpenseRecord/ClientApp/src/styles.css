@@ -14,3 +14,13 @@ code {
   background-color: #1b6ec2;
   border-color: #1861ac;
 }
+html,body {
+  height: 100%;
+  box-sizing: border-box;
+  margin: 0;
+}
+button{
+  height: 40px; 
+  border: 1px solid #333;
+
+}

@@ -1,0 +1,23 @@
+.title{
+    text-align: center;
+}
+.component-container{
+    display: flex;
+    justify-content: center;
+    margin:0 10px;
+    height: 90%;
+}
+.create-form{
+    flex:1 1 auto;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+}
+.expense-records{
+    flex:1 1 auto;
+    border: 1px solid black;
+    margin-left: 10px;
+}
+input,.add-button{
+    margin: 5px;
+}
